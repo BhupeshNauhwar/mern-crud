@@ -10,7 +10,7 @@ const CreateUser = () => {
 
   const Submit=(e)=>{
     e.preventDefault();
-    axios.post("https://mern-crud-backend-biys.onrender.com/createUser",{name,age,email})
+    axios.post("http://localhost:3001/createUser",{name,age,email})
     .then(result=>{console.log(result)
       navigate('/')
     })
@@ -46,4 +46,4 @@ const CreateUser = () => {
 }
 
 export default CreateUser
-CreateUser
+
