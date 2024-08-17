@@ -20,37 +20,37 @@ const Users = () => {
     .catch(err=>console.log(err))
   } 
   return (
-    <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
-      <div className='w-50 bg-white 
-      rounded p-3'>
-        <Link to="/create" className='btn btn-success'>Add</Link>
-        <table className='table'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-            users.map((user)=>{
-              return <tr>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.age}</td>
-                <td><Link to={`/update/${user._id}` }className='btn btn-success'>Update</Link> 
-                <button className='btn btn-danger' onClick={(e)=>handleDelete(user._id)}>Delete</button>
-                </td>
-              </tr>
-            })
-            }
-          </tbody>
-        </table>
+          <div className='container-fluid d-flex min-vh-100 bg-primary justify-content-center align-items-center'>
+          <div className='col-12 col-md-8 col-lg-6 bg-white rounded p-3'>
+          <Link to="/create" className='btn btn-success mb-3'>Add</Link>
+          <div className="table-responsive">
+            <table className='table table-striped'>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.map((user) => (
+                  <tr key={user._id}>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>{user.age}</td>
+                    <td>
+                      <Link to={`/update/${user._id}`} className='btn btn-success me-2'>Update</Link>
+                      <button className='btn btn-danger' onClick={() => handleDelete(user._id)}>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-     
-    </div>
+
   )
 }
 

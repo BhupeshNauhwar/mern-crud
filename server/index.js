@@ -3,6 +3,7 @@ const mongoose=require('mongoose');
 const cors=require('cors');
 const UserModel=require('./models/Users');
 const app=express();
+const Port=process.env.PORT || 3001;
 app.use(cors());
 
 app.use(express.json());
@@ -47,5 +48,5 @@ app.delete('/deleteUser/:id',(req,res)=>{
     .catch(err=>res.json(err))
 })
 app.listen(3001,()=>{
-    console.log("http://localhost:3001");
+    console.log(`http://localhost:${Port}`);
 })
