@@ -47,6 +47,6 @@ app.delete('/deleteUser/:id',(req,res)=>{
     .then(res=>res.json(res))
     .catch(err=>res.json(err))
 })
-app.listen(3001,()=>{
+app.listen(Port,()=>{
     console.log(`http://localhost:${Port}`);
 })
